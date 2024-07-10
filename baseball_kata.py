@@ -14,11 +14,15 @@ class Game:
             return GameResult(True, 3, 0)
         else:
             strikes = 0
+            balls = 0
             for i in range(len(self.question)):
                 if self.question.find(guess_number[i]) == i:
                     strikes += 1
+                elif self.question.find(guess_number[i]) > -1:
+                    balls += 1
 
-            return GameResult(False, strikes, 0)
+
+            return GameResult(False, strikes, balls)
 
     def is_three_digit_number(self, guess_number):
         pattern = r'^\d{3}$'
