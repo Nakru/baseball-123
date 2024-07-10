@@ -12,6 +12,9 @@ class Game:
         if not self.is_three_digit_number(guess_number):
             raise TypeError()
 
+        if not len(set(guess_number)) == 3:
+            raise  TypeError()
+
     def is_three_digit_number(self, s):
         pattern = r'^\d{3}$'
         if re.match(pattern, s):
