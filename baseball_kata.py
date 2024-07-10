@@ -12,6 +12,8 @@ class Game:
         self.validate_guess_number(guess_number)
         if guess_number == self.question:
             return GameResult(True, 3, 0)
+        else:
+            return GameResult(False, 0, 0)
 
     def is_three_digit_number(self, guess_number):
         pattern = r'^\d{3}$'
