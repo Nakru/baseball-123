@@ -1,9 +1,15 @@
 import re
 
+from GameResult import GameResult
+
 
 class Game:
+    def __init__(self):
+        super().__init__()
+        self.question = ""
     def guess(self, guess_number):
         self.validate_guess_number(guess_number)
+        return GameResult(True, 3, 0)
 
     def is_three_digit_number(self, guess_number):
         pattern = r'^\d{3}$'
@@ -21,3 +27,6 @@ class Game:
             raise TypeError()
         if not self.is_duplicate_number(guess_number):
             raise TypeError()
+
+
+
