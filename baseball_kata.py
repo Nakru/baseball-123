@@ -15,9 +15,7 @@ class Game:
         else:
             strikes = 0
             for i in range(len(self.question)):
-                char = guess_number[i]
-                index = self.question.find(char)
-                if index == i:
+                if self.question.find(guess_number[i]) == i:
                     strikes += 1
 
             return GameResult(False, strikes, 0)
